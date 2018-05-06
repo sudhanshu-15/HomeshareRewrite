@@ -25,3 +25,16 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    compileSdkVersion = 27
+    minSdkVersion = 25
+    targetSdkVersion = 27
+    supportLibrary = "27.1.1"
+    retrofitVersion = "2.4.0"
+    archCompVersion = "1.1.1"
+    roomVersion = "1.0.0"
+    picassoVersion = "2.71828"
+    daggerVersion = "2.15"
+    leakCanaryVersion = "1.5.4"
+}
