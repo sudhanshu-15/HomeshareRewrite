@@ -37,4 +37,5 @@ ext {
     picassoVersion = "2.71828"
     daggerVersion = "2.15"
     leakCanaryVersion = "1.5.4"
+    zxingVersion = "3.4.0"
 }
