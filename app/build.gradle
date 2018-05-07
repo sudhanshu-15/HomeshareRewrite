@@ -11,9 +11,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            buildConfigField "String", 'BASE_URL', "http://homeshare.soic.indiana.edu/servicetest/"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", 'BASE_URL', "https://homeshare.soic.indiana.edu/service/"
         }
     }
     compileOptions {
