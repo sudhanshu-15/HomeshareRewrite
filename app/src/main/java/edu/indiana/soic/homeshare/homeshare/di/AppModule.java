@@ -1,6 +1,7 @@
 package edu.indiana.soic.homeshare.homeshare.di;
 
 import android.app.Application;
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.persistence.room.Room;
 
 import java.util.concurrent.Executor;
@@ -10,16 +11,18 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import dagger.android.ContributesAndroidInjector;
 import edu.indiana.soic.homeshare.homeshare.BuildConfig;
+import edu.indiana.soic.homeshare.homeshare.HomeshareApplication;
+import edu.indiana.soic.homeshare.homeshare.UserActivity;
 import edu.indiana.soic.homeshare.homeshare.api.HomeshareService;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDb;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module
+@Module(subcomponents = ViewModelSubComponent.class)
 class AppModule {
-
     @Singleton
     @Provides
     HomeshareDb provideDb(Application application) {
@@ -45,5 +48,11 @@ class AppModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(HomeshareService.class);
+    }
+
+    @Singleton
+    @Provides
+    ViewModelProvider.Factory provideViewModelFactory(ViewModelSubComponent.Builder viewModelSubComponent) {
+        return new HomeshareViewModelFactory(viewModelSubComponent.build());
     }
 }
