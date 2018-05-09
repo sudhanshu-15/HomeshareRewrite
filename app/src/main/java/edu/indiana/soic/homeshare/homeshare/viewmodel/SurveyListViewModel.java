@@ -34,7 +34,6 @@ public class SurveyListViewModel extends AndroidViewModel {
 
     public void refreshSurveyList() {
         Participant participant = getParticipant();
-        Log.d("SurveyListVM", "refreshSurveyList: " + participant.getParticipantId());
         repository.fetchFromServer(participant.getParticipantId());
     }
 

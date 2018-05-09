@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.marlonlom.utilities.timeago.TimeAgo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -84,7 +86,12 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
     public void onBindViewHolder(@NonNull SurveyViewHolder holder, int position) {
         Survey currentSurvey = surveyList.get(position);
         holder.binding.setSurvey(currentSurvey);
+        String dueDate = "Due On: " + TimeAgo.using(currentSurvey.getDueDate());
+        String receivedDate = "Received On: " + TimeAgo.using(currentSurvey.getDateSent());
+        holder.binding.surveyDue.setText(dueDate);
+        holder.binding.surveyReceived.setText(receivedDate);
         holder.binding.executePendingBindings();
+
     }
 
     @Override
