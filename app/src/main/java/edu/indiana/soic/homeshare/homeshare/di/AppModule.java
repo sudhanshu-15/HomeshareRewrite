@@ -15,6 +15,7 @@ import dagger.Module;
 import dagger.Provides;
 import edu.indiana.soic.homeshare.homeshare.BuildConfig;
 import edu.indiana.soic.homeshare.homeshare.api.HomeshareService;
+import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDao;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDb;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
 import retrofit2.Retrofit;
@@ -32,6 +33,12 @@ class AppModule {
     @Provides
     ParticipantDao provideParticipantDao(HomeshareDb homeshareDb) {
         return homeshareDb.participantDao();
+    }
+
+    @Singleton
+    @Provides
+    HomeshareDao provideHomeshareDao(HomeshareDb homeshareDb) {
+        return homeshareDb.homeshareDao();
     }
 
     @Provides

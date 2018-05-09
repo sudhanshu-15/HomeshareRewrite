@@ -36,7 +36,8 @@ public class SurveyInterviewRepository {
 
     public LiveData<List<Survey>> getSurveyList() {
         long currentTime = System.currentTimeMillis();
-        return homeshareDao.getActiveSurveys(currentTime);
+//        return homeshareDao.getActiveSurveys(currentTime);
+        return homeshareDao.getAllSurveys();
     }
 
     public LiveData<List<Interview>> getInterviewList() {
@@ -57,6 +58,7 @@ public class SurveyInterviewRepository {
     }
 
     public void fetchFromServer(String pId) {
+        Log.d(TAG, "fetchFromServer: " + pId);
         executor.execute(() -> {
             int count = homeshareDao.getSurveyCount();
             boolean surveysExist = (count > 0);
@@ -64,8 +66,11 @@ public class SurveyInterviewRepository {
                 homeshareService.getInteviewsSurveys(pId).enqueue(new Callback<Data>() {
                     @Override
                     public void onResponse(Call<Data> call, Response<Data> response) {
+                        Log.d(TAG, "onResponse: " + response.body().getSurveys().size());
                         executor.execute(() -> {
+                            Log.d(TAG, "onResponse: " + response.body());
                             List<Survey> surveyList = response.body().getSurveys();
+                            Log.d(TAG, "onResponse: " + surveyList.size());
                             homeshareDao.addAllSurveys(surveyList);
                             List<Interview> interviewList = response.body().getInterviews();
                             homeshareDao.addAllInterviews(interviewList);

@@ -1,6 +1,7 @@
 package edu.indiana.soic.homeshare.homeshare.di;
 
 import dagger.Subcomponent;
+import edu.indiana.soic.homeshare.homeshare.viewmodel.SurveyListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.UserActivityViewModel;
 
 @Subcomponent
@@ -11,4 +12,5 @@ public interface ViewModelSubComponent {
     }
 
     UserActivityViewModel userActivityViewModel();
+    SurveyListViewModel surveyListViewModel();
 }

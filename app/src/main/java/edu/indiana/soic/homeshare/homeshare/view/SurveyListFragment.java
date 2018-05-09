@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import javax.inject.Inject;
 
 import edu.indiana.soic.homeshare.homeshare.R;
+import edu.indiana.soic.homeshare.homeshare.data.model.Participant;
 import edu.indiana.soic.homeshare.homeshare.databinding.SurveyListFragmentBinding;
 import edu.indiana.soic.homeshare.homeshare.di.Injectable;
 import edu.indiana.soic.homeshare.homeshare.view.adapter.SurveyListAdapter;
@@ -33,6 +37,7 @@ public class SurveyListFragment extends Fragment implements Injectable {
         binding = DataBindingUtil.inflate(inflater, R.layout.survey_list_fragment, container, false);
         surveyListAdapter = new SurveyListAdapter(getActivity());
         binding.surveyList.setAdapter(surveyListAdapter);
+        binding.surveyList.setLayoutManager(new GridLayoutManager(getContext(), 1));
         return binding.getRoot();
     }
 
@@ -40,5 +45,9 @@ public class SurveyListFragment extends Fragment implements Injectable {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         SurveyListViewModel viewModel = ViewModelProviders.of(this, viewModelFactory).get(SurveyListViewModel.class);
+        viewModel.getSurveyList().observe(this, surveys -> {
+            surveyListAdapter.setSurveyList(surveys);
+        });
+        viewModel.refreshSurveyList();
     }
 }
