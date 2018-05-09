@@ -1,5 +1,6 @@
 package edu.indiana.soic.homeshare.homeshare.view;
 
+import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
@@ -37,8 +38,11 @@ public class SurveyListFragment extends Fragment implements Injectable {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.survey_list_fragment, container, false);
         surveyListAdapter = new SurveyListAdapter(getActivity());
+        surveyListAdapter.setClickListener(((view, url) -> {
+            showSurvey(url);
+        }));
         binding.surveyList.setAdapter(surveyListAdapter);
-        binding.surveyList.setLayoutManager(new GridLayoutManager(getContext(), 1));
+
         return binding.getRoot();
     }
 
@@ -55,5 +59,11 @@ public class SurveyListFragment extends Fragment implements Injectable {
 
         });
         viewModel.refreshSurveyList();
+    }
+
+    private void showSurvey(String url) {
+        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            ((SurveyActivity) getActivity()).showSurvey(url);
+        }
     }
 }

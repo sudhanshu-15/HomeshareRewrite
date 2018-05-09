@@ -31,4 +31,12 @@ public class SurveyActivity extends AppCompatActivity implements HasSupportFragm
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
         return dispatchingAndroidInjector;
     }
+
+    public void showSurvey(String url) {
+        SurveyWebFragment fragment = SurveyWebFragment.forSurveyLink(url);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.surveyFragmentContainer, fragment, null)
+                .commit();
+    }
 }

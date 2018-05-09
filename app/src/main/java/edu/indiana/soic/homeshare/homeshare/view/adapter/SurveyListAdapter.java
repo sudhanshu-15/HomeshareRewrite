@@ -24,9 +24,10 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
     List<Survey> surveyList;
     LayoutInflater layoutInflater;
     private ClickListener clickListener;
+    public static final String TAG = "SurveyListAdapter";
 
     public interface ClickListener {
-        void onItemClicked(View view, int pos);
+        void onItemClicked(View view, String url);
     }
 
     public void setClickListener(ClickListener clickListener) {
@@ -74,6 +75,11 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
 
     }
 
+    @Override
+    public long getItemId(int position) {
+        return surveyList.get(position).getId();
+    }
+
     @NonNull
     @Override
     public SurveyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -91,7 +97,6 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
         holder.binding.surveyDue.setText(dueDate);
         holder.binding.surveyReceived.setText(receivedDate);
         holder.binding.executePendingBindings();
-
     }
 
     @Override
@@ -106,11 +111,15 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
         public SurveyViewHolder(SingleRowSurveyBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            this.binding.getRoot().setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-
+            int position = getAdapterPosition();
+            String surveyUrl = surveyList.get(position).getSurveyUrl();
+            Log.d(TAG, "onClick: " + getItemCount());
+            clickListener.onItemClicked(view, surveyUrl);
         }
     }
 }
