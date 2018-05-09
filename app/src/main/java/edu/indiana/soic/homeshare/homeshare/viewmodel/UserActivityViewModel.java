@@ -26,4 +26,8 @@ public class UserActivityViewModel extends ViewModel {
         Log.d("ViewModel", "sendTokenToServer: here");
         participantDetailRepository.sendTokenToServer(participantToken);
     }
+
+    public Participant getParticipant() {
+        return participantDetailRepository.getParticipant();
+    }
 }

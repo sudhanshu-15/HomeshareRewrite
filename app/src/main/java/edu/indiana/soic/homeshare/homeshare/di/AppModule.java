@@ -28,7 +28,7 @@ class AppModule {
     @Singleton
     @Provides
     HomeshareDb provideDb(Application application) {
-        return Room.databaseBuilder(application, HomeshareDb.class, "homeshare.db").build();
+        return Room.databaseBuilder(application, HomeshareDb.class, "homeshare.db").allowMainThreadQueries().build();
     }
 
     @Singleton

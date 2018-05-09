@@ -51,4 +51,8 @@ public class ParticipantDetailRepository {
             }
         });
     }
+
+    public Participant getParticipant() {
+        return participantDao.getParticipant();
+    }
 }

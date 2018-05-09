@@ -1,6 +1,7 @@
 package edu.indiana.soic.homeshare.homeshare.notification;
 
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -27,9 +28,7 @@ public class HomeshareInstanceIDService extends FirebaseInstanceIdService {
 
     @Inject
     HomeshareService homeshareService;
-
-    @Inject
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
 
 
     @Override
@@ -37,6 +36,8 @@ public class HomeshareInstanceIDService extends FirebaseInstanceIdService {
 
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(TAG, "onTokenRefresh: " + refreshedToken);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         String pId = sharedPreferences.getString("pId", "");
         sharedPreferences.edit().putString("firebaseToken", refreshedToken).apply();
