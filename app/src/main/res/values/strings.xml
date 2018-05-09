@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Homeshare</string>
+    <string name="participant">Participant Details</string>
+    <string name="firstNameText">First Name</string>
+    <string name="lastNameText">Last Name</string>
+    <string name="participantIdText">Participant ID</string>
+    <string name="firebaseTokenText">Firebase Token</string>
+    <string name="interviewLinkText">Interview Link</string>
+    <string name="wearableText">Wearable</string>
+    <string name="emailLinkText">Email Link</string>
+    <string name="passwordText">Account Password</string>
+    <string name="scanButtonText">Scan</string>
+    <string name="genButtonText">Generate Token</string>
+    <string name="saveButtonText">Save</string>
+    <string name="QRError">Unable to read QR, try again</string>
 </resources>

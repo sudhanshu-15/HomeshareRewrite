@@ -25,7 +25,7 @@ public interface HomeshareDao {
     Survey getSurvey(String surveyId);
 
     @Query("SELECT * FROM surveys WHERE dueDate >= :currentDate AND status LIKE 'pending'")
-    LiveData<LiveData<Survey>> getActiveSurveys(long currentDate);
+    LiveData<List<Survey>> getActiveSurveys(long currentDate);
 
     @Query("SELECT * FROM interviews WHERE interviewId LIKE :interviewId")
     Interview getInterview(String interviewId);

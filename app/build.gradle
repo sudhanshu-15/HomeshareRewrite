@@ -12,17 +12,20 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", 'BASE_URL', "http://homeshare.soic.indiana.edu/servicetest/"
+            buildConfigField "String", 'BASE_URL', '"http://homeshare.soic.indiana.edu/servicetest/"'
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", 'BASE_URL', "https://homeshare.soic.indiana.edu/service/"
+            buildConfigField "String", 'BASE_URL', '"https://homeshare.soic.indiana.edu/service/"'
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -48,7 +51,14 @@ dependencies {
     //Leak Canary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
+    //Zxing
+    implementation "com.journeyapps:zxing-android-embedded:$zxingVersion"
+    //Firebase Messaging
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.android.gms:play-services-location:11.8.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
