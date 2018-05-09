@@ -41,6 +41,10 @@ public class SurveyListViewModel extends AndroidViewModel {
         repository.updateSurvey(survey);
     }
 
+    public void updateSurveyStatus(String surveyId) {
+        repository.updateSurveyStatus(surveyId);
+    }
+
     private Participant getParticipant() {
         return participantRepository.getParticipant();
     }

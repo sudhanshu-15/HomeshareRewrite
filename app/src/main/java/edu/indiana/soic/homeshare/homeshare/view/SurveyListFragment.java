@@ -29,6 +29,7 @@ public class SurveyListFragment extends Fragment implements Injectable {
     public static final String TAG = "SurveyListFragment";
     private SurveyListAdapter surveyListAdapter;
     private SurveyListFragmentBinding binding;
+    private SurveyListViewModel viewModel;
 
     @Inject
     ViewModelProvider.Factory viewModelFactory;
@@ -38,8 +39,8 @@ public class SurveyListFragment extends Fragment implements Injectable {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.survey_list_fragment, container, false);
         surveyListAdapter = new SurveyListAdapter(getActivity());
-        surveyListAdapter.setClickListener(((view, url) -> {
-            showSurvey(url);
+        surveyListAdapter.setClickListener(((view, url, surveyId) -> {
+            showSurvey(url, surveyId);
         }));
         binding.surveyList.setAdapter(surveyListAdapter);
 
@@ -49,7 +50,7 @@ public class SurveyListFragment extends Fragment implements Injectable {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        SurveyListViewModel viewModel = ViewModelProviders.of(this, viewModelFactory).get(SurveyListViewModel.class);
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(SurveyListViewModel.class);
         viewModel.getSurveyList().observe(this, surveys -> {
             if (surveys.size() != 0) {
                 surveyListAdapter.setSurveyList(surveys);
@@ -61,8 +62,9 @@ public class SurveyListFragment extends Fragment implements Injectable {
         viewModel.refreshSurveyList();
     }
 
-    private void showSurvey(String url) {
+    private void showSurvey(String url, String surveyId) {
         if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            viewModel.updateSurveyStatus(surveyId);
             ((SurveyActivity) getActivity()).showSurvey(url);
         }
     }

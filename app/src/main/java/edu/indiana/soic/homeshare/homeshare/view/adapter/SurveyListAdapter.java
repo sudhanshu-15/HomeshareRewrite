@@ -27,7 +27,7 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
     public static final String TAG = "SurveyListAdapter";
 
     public interface ClickListener {
-        void onItemClicked(View view, String url);
+        void onItemClicked(View view, String url, String surveyId);
     }
 
     public void setClickListener(ClickListener clickListener) {
@@ -118,8 +118,9 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
         public void onClick(View view) {
             int position = getAdapterPosition();
             String surveyUrl = surveyList.get(position).getSurveyUrl();
+            String surveyId = surveyList.get(position).getSurveyId();
             Log.d(TAG, "onClick: " + getItemCount());
-            clickListener.onItemClicked(view, surveyUrl);
+            clickListener.onItemClicked(view, surveyUrl, surveyId);
         }
     }
 }
