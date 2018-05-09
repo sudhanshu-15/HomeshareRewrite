@@ -1,7 +1,9 @@
-package edu.indiana.soic.homeshare.homeshare;
+package edu.indiana.soic.homeshare.homeshare.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import edu.indiana.soic.homeshare.homeshare.R;
 
 public class HomeActivity extends AppCompatActivity {
 

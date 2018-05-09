@@ -2,7 +2,7 @@ package edu.indiana.soic.homeshare.homeshare.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
-import edu.indiana.soic.homeshare.homeshare.HomeActivity;
+import edu.indiana.soic.homeshare.homeshare.view.HomeActivity;
 
 @Module
 public abstract class HomeActivityModule {

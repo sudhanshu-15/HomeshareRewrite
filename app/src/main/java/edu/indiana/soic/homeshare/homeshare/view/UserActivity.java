@@ -1,4 +1,4 @@
-package edu.indiana.soic.homeshare.homeshare;
+package edu.indiana.soic.homeshare.homeshare.view;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.gson.Gson;
@@ -20,9 +19,12 @@ import com.google.zxing.integration.android.IntentResult;
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
+import edu.indiana.soic.homeshare.homeshare.BuildConfig;
+import edu.indiana.soic.homeshare.homeshare.R;
 import edu.indiana.soic.homeshare.homeshare.api.ParticipantToken;
 import edu.indiana.soic.homeshare.homeshare.data.model.Participant;
 import edu.indiana.soic.homeshare.homeshare.databinding.ActivityUserBinding;
+import edu.indiana.soic.homeshare.homeshare.view.HomeActivity;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.UserActivityViewModel;
 
 public class UserActivity extends AppCompatActivity {

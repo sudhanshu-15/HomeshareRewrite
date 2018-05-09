@@ -13,10 +13,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import dagger.android.ContributesAndroidInjector;
 import edu.indiana.soic.homeshare.homeshare.BuildConfig;
-import edu.indiana.soic.homeshare.homeshare.HomeshareApplication;
-import edu.indiana.soic.homeshare.homeshare.UserActivity;
 import edu.indiana.soic.homeshare.homeshare.api.HomeshareService;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDb;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
