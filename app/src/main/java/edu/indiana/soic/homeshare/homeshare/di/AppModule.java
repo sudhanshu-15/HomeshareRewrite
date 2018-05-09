@@ -3,6 +3,8 @@ package edu.indiana.soic.homeshare.homeshare.di;
 import android.app.Application;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.persistence.room.Room;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -26,7 +28,7 @@ class AppModule {
     @Singleton
     @Provides
     HomeshareDb provideDb(Application application) {
-        return Room.databaseBuilder(application, HomeshareDb.class, "homeshare.db").build();
+        return Room.databaseBuilder(application, HomeshareDb.class, "homeshare.db").allowMainThreadQueries().build();
     }
 
     @Singleton
@@ -54,5 +56,11 @@ class AppModule {
     @Provides
     ViewModelProvider.Factory provideViewModelFactory(ViewModelSubComponent.Builder viewModelSubComponent) {
         return new HomeshareViewModelFactory(viewModelSubComponent.build());
+    }
+
+    @Singleton
+    @Provides
+    SharedPreferences provideSharedPreferences(Application application) {
+        return PreferenceManager.getDefaultSharedPreferences(application);
     }
 }

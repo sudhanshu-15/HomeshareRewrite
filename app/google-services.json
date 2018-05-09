@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "585310505907",
+    "firebase_url": "https://homeshare-f7daf.firebaseio.com",
+    "project_id": "homeshare-f7daf",
+    "storage_bucket": "homeshare-f7daf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585310505907:android:6e499d7bafd4f34e",
+        "android_client_info": {
+          "package_name": "edu.indiana.soic.homeshare.homeshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585310505907-fki8tbeqm7ffkp57agjkll4rcjm5o807.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQqSNVUIOv0a8E7q0snFB6QdBIaXK3vYQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

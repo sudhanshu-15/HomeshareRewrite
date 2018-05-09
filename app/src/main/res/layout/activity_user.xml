@@ -263,6 +263,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:text="@string/genButtonText"
+                    android:onClick="generateToken"
                     app:layout_constraintBaseline_toBaselineOf="@+id/scanButton"
                     app:layout_constraintEnd_toStartOf="@+id/saveButton"
                     app:layout_constraintHorizontal_bias="0.5"

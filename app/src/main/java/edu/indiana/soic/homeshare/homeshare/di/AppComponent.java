@@ -15,7 +15,8 @@ import edu.indiana.soic.homeshare.homeshare.HomeshareApplication;
         AndroidInjectionModule.class,
         UserActivityModule.class,
         AppModule.class,
-        CaptureActivityModule.class
+        CaptureActivityModule.class,
+        HomeActivityModule.class
 })
 public interface AppComponent{
     @Component.Builder
