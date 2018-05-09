@@ -12,4 +12,5 @@
     <string name="scanButtonText">Scan</string>
     <string name="genButtonText">Generate Token</string>
     <string name="saveButtonText">Save</string>
+    <string name="QRError">Unable to read QR, try again</string>
 </resources>
