@@ -37,7 +37,7 @@ public interface HomeshareDao {
     void addAllSurveys(List<Survey> surveyList);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void allAllInterviews(List<Interview> interviewList);
+    void addAllInterviews(List<Interview> interviewList);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void addSurvey(Survey survey);
@@ -50,5 +50,11 @@ public interface HomeshareDao {
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateInterview(Interview interview);
+
+    @Query("SELECT COUNT(*) FROM surveys")
+    int getSurveyCount();
+
+    @Query("SELECT COUNT(*) FROM interviews")
+    int getInterviewCount();
 
 }

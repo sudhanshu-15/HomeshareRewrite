@@ -13,4 +13,6 @@
     <string name="genButtonText">Generate Token</string>
     <string name="saveButtonText">Save</string>
     <string name="QRError">Unable to read QR, try again</string>
+    <string name="listemptySurvey">No surveys available</string>
+    <string name="invalidSurveyLink">Incorrect survey link, please contact researchers</string>
 </resources>

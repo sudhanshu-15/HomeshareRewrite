@@ -12,7 +12,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import edu.indiana.soic.homeshare.homeshare.HomeActivity;
+import edu.indiana.soic.homeshare.homeshare.view.HomeActivity;
 import edu.indiana.soic.homeshare.homeshare.R;
 
 public class HomeshareMessagingService extends FirebaseMessagingService {

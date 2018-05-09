@@ -13,9 +13,7 @@ import edu.indiana.soic.homeshare.homeshare.HomeshareApplication;
 @Singleton
 @Component(modules = {
         AndroidInjectionModule.class,
-        UserActivityModule.class,
         AppModule.class,
-        CaptureActivityModule.class,
         HomeActivityModule.class
 })
 public interface AppComponent{
