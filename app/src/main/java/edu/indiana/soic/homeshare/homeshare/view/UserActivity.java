@@ -45,7 +45,6 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         userActivityViewModel = ViewModelProviders.of(this, viewModelFactory).get(UserActivityViewModel.class);
         checkFirstRun();
-//        setContentView(R.layout.activity_user);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user);
     }
 
