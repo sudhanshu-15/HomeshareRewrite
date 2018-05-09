@@ -9,6 +9,7 @@ import java.util.concurrent.Executor;
 import javax.inject.Inject;
 
 import edu.indiana.soic.homeshare.homeshare.api.HomeshareService;
+import edu.indiana.soic.homeshare.homeshare.api.SurveyStatus;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDao;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
 import edu.indiana.soic.homeshare.homeshare.data.model.Data;
@@ -49,6 +50,12 @@ public class SurveyInterviewRepository {
         executor.execute(() -> {
             homeshareDao.updateSurvey(survey);
         });
+    }
+
+    public void updateSurveyStatus(String surveyId) {
+        SurveyStatus surveyStatus = new SurveyStatus("opened");
+//        Log.d(TAG, "updateSurveyStatus: Status Updated");
+        homeshareService.updateSurvey(surveyId, surveyStatus);
     }
 
     public void updateInterview(Interview interview) {
