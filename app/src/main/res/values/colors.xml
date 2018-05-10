@@ -6,4 +6,12 @@
     <color name="colorCard">#424242</color>
     <color name="white">#fafafa</color>
     <color name="cardButton">#ec407a</color>
+    <color name="consBack">#eceff1</color>
+    <color name="buttonContact">#1565c0</color>
+    <color name="buttonSurvey">#7e57c2</color>
+    <color name="buttonInterview">#ff6f00</color>
+    <color name="buttonData">#43a047</color>
+    <color name="buttonCalendar">#e53935</color>
+    <color name="buttonStudy">#009688</color>
+    <color name="buttonTutorial">#8d6e63</color>
 </resources>
