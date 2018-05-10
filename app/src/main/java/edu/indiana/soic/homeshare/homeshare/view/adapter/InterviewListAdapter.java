@@ -52,7 +52,7 @@ public class InterviewListAdapter extends RecyclerView.Adapter<InterviewListAdap
     private ClickListener clickListener;
 
     public interface ClickListener {
-        void onItemClicked();
+        void onItemClicked(View view, long scheduleDate);
     }
 
     public void setClickListener(ClickListener clickListener) {
@@ -110,7 +110,9 @@ public class InterviewListAdapter extends RecyclerView.Adapter<InterviewListAdap
 
         @Override
         public void onClick(View view) {
-
+            int position = getAdapterPosition();
+            long scheduleDate = interviewList.get(position).getDateScheduled();
+            clickListener.onItemClicked(view, scheduleDate);
         }
     }
 

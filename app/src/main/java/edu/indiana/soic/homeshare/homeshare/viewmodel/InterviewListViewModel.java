@@ -37,7 +37,7 @@ public class InterviewListViewModel extends AndroidViewModel {
         repository.fetchFromServer(participant.getParticipantId());
     }
 
-    private Participant getParticipant() {
+    public Participant getParticipant() {
         return participantRepository.getParticipant();
     }
 }

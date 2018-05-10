@@ -1,5 +1,8 @@
 package edu.indiana.soic.homeshare.homeshare.view;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,5 +33,14 @@ public class InterviewActivity extends AppCompatActivity implements HasSupportFr
     @Override
     public DispatchingAndroidInjector<Fragment> supportFragmentInjector() {
         return dispatchingAndroidInjector;
+    }
+
+    public void startZoom(String zoomLink) {
+        Intent openZoom = new Intent(Intent.ACTION_VIEW, Uri.parse(zoomLink));
+        PackageManager packageManager = getPackageManager();
+        if (openZoom.resolveActivity(packageManager) != null) {
+            startActivity(openZoom);
+        }
+
     }
 }
