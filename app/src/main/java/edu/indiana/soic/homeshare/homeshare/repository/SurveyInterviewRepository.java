@@ -43,7 +43,8 @@ public class SurveyInterviewRepository {
 
     public LiveData<List<Interview>> getInterviewList() {
         long currentTime = System.currentTimeMillis();
-        return homeshareDao.getActiveInterviews(currentTime);
+//        return homeshareDao.getActiveInterviews(currentTime);
+        return homeshareDao.getAllInterviews();
     }
 
     public void updateSurvey(Survey survey) {

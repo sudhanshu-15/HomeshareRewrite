@@ -11,6 +11,7 @@ import java.util.concurrent.Callable;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import edu.indiana.soic.homeshare.homeshare.viewmodel.InterviewListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.SurveyListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.UserActivityViewModel;
 
@@ -24,6 +25,7 @@ public class HomeshareViewModelFactory implements ViewModelProvider.Factory {
 
         creators.put(UserActivityViewModel.class, () -> viewModeSubComponent.userActivityViewModel());
         creators.put(SurveyListViewModel.class, () -> viewModeSubComponent.surveyListViewModel());
+        creators.put(InterviewListViewModel.class, () -> viewModeSubComponent.interviewListViewModel());
     }
 
     @NonNull

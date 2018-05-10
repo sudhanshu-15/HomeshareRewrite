@@ -2,6 +2,7 @@ package edu.indiana.soic.homeshare.homeshare.di;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
+import edu.indiana.soic.homeshare.homeshare.view.InterviewListFragment;
 import edu.indiana.soic.homeshare.homeshare.view.SurveyListFragment;
 import edu.indiana.soic.homeshare.homeshare.view.SurveyWebFragment;
 
@@ -13,4 +14,7 @@ public abstract class FragmentsBuildersModule {
 
     @ContributesAndroidInjector
     abstract SurveyWebFragment contributeSurveyWebFragment();
+
+    @ContributesAndroidInjector
+    abstract InterviewListFragment contributeInterviewListFragment();
 }
