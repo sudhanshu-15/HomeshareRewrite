@@ -16,4 +16,5 @@
     <string name="listemptySurvey">No surveys available</string>
     <string name="listemptyInterview">No interviews scheduled at the moment</string>
     <string name="invalidSurveyLink">Incorrect survey link, please contact researchers</string>
+    <string name="interviewNotActive">Interview not yet active</string>
 </resources>

@@ -10,10 +10,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import javax.inject.Inject;
 
@@ -46,6 +49,10 @@ public class InterviewListFragment extends Fragment implements Injectable {
             startZoom(scheduleDate);
         });
         binding.interviewList.setAdapter(adapter);
+        Button button = binding.cardInactive.findViewById(R.id.okButton);
+        button.setOnClickListener(view -> {
+            hideCard(view);
+        });
         return binding.getRoot();
     }
 
@@ -66,10 +73,19 @@ public class InterviewListFragment extends Fragment implements Injectable {
     private void startZoom(long scheduleDate) {
         long currentDate = System.currentTimeMillis();
         long diff = Math.abs(currentDate - scheduleDate);
+        Log.d(TAG, "startZoom: " + diff);
         String zoomLink = viewModel.getParticipant().getZoomLink();
-        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED) && zoomLink.length() != 0 && diff >= DIFF_TIME) {
-            ((InterviewActivity)getActivity()).startZoom(zoomLink);
+        if (getLifecycle().getCurrentState().isAtLeast(Lifecycle.State.STARTED)) {
+            if (zoomLink.length() != 0 && diff <= DIFF_TIME) {
+                ((InterviewActivity)getActivity()).startZoom(zoomLink);
+            } else {
+                binding.cardInactive.setVisibility(View.VISIBLE);
+            }
         }
+    }
+
+    public void hideCard(View view) {
+        binding.cardInactive.setVisibility(View.GONE);
     }
 
 }
