@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.github.marlonlom.utilities.timeago.TimeAgo;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 import edu.indiana.soic.homeshare.homeshare.R;
@@ -34,8 +36,11 @@ public class InterviewListAdapter extends RecyclerView.Adapter<InterviewListAdap
     public void onBindViewHolder(@NonNull InterviewViewHolder holder, int position) {
         Interview currentInterview = interviewList.get(position);
         holder.binding.setInterview(currentInterview);
-        String scheduledDate = TimeAgo.using(currentInterview.getDateScheduled());
+        String scheduledDateAgo = TimeAgo.using(currentInterview.getDateScheduled());
+        String scheduledDate = DateFormat.getDateInstance(DateFormat.SHORT)
+                .format(new Date(currentInterview.getDateScheduled()));
         holder.binding.interviewDue.setText("Interview Date: " + scheduledDate);
+        holder.binding.interviewDueAgo.setText(scheduledDateAgo);
         holder.binding.executePendingBindings();
     }
 
