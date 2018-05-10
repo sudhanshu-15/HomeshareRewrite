@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.github.marlonlom.utilities.timeago.TimeAgo;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -92,16 +94,22 @@ public class SurveyListAdapter extends RecyclerView.Adapter<SurveyListAdapter.Su
     public void onBindViewHolder(@NonNull SurveyViewHolder holder, int position) {
         Survey currentSurvey = surveyList.get(position);
         holder.binding.setSurvey(currentSurvey);
-        String dueDate = "Due On: " + TimeAgo.using(currentSurvey.getDueDate());
-        String receivedDate = "Received On: " + TimeAgo.using(currentSurvey.getDateSent());
-        holder.binding.surveyDue.setText(dueDate);
-        holder.binding.surveyReceived.setText(receivedDate);
+        String dueDateText = "Due On: " + dateFormat(currentSurvey.getDueDate());
+        String receivedDateText = "Received On: " + dateFormat(currentSurvey.getDateSent());
+        holder.binding.surveyDue.setText(dueDateText);
+        holder.binding.surveyReceived.setText(receivedDateText);
         holder.binding.executePendingBindings();
     }
 
     @Override
     public int getItemCount() {
         return surveyList == null ? 0 : surveyList.size();
+    }
+
+    private String dateFormat(long dateMilis) {
+        String dateString = DateFormat.getDateInstance(DateFormat.SHORT)
+                .format(new Date(dateMilis)) + "  -  " + TimeAgo.using(dateMilis);
+        return dateString;
     }
 
     class SurveyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

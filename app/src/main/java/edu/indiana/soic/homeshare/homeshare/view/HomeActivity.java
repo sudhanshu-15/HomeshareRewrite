@@ -19,4 +19,9 @@ public class HomeActivity extends AppCompatActivity {
         Intent surveyActivity = new Intent(getApplicationContext(), SurveyActivity.class);
         startActivity(surveyActivity);
     }
+
+    public void showInterview(View view) {
+        Intent interviewActivity = new Intent(getApplicationContext(), InterviewActivity.class);
+        startActivity(interviewActivity);
+    }
 }

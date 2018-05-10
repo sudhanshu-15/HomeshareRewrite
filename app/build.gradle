@@ -12,8 +12,8 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", 'BASE_URL', '"http://homeshare.soic.indiana.edu/servicetest/"'
-//            buildConfigField "String", 'BASE_URL', '"https://homeshare.soic.indiana.edu/service/"'
+//            buildConfigField "String", 'BASE_URL', '"http://homeshare.soic.indiana.edu/servicetest/"'
+            buildConfigField "String", 'BASE_URL', '"https://homeshare.soic.indiana.edu/service/"'
         }
         release {
             minifyEnabled false
