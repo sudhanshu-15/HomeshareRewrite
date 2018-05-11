@@ -15,6 +15,7 @@ import dagger.Module;
 import dagger.Provides;
 import edu.indiana.soic.homeshare.homeshare.BuildConfig;
 import edu.indiana.soic.homeshare.homeshare.api.HomeshareService;
+import edu.indiana.soic.homeshare.homeshare.api.WeatherService;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDao;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDb;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
@@ -54,6 +55,16 @@ class AppModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(HomeshareService.class);
+    }
+
+    @Singleton
+    @Provides
+    WeatherService provideWeatherService() {
+        return new Retrofit.Builder()
+                .baseUrl(WeatherService.API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(WeatherService.class);
     }
 
     @Singleton

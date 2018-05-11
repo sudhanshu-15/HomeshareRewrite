@@ -64,6 +64,6 @@ public interface HomeshareDao {
     void addWeather(WeatherInfo weather);
 
     @Query("SELECT * FROM weather ORDER BY `dateCreated` DESC LIMIT 1")
-    Weather getWeather();
+    LiveData<WeatherInfo> getWeather();
 
 }
