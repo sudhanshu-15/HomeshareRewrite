@@ -1,28 +1,17 @@
 package edu.indiana.soic.homeshare.homeshare.data.model;
 
 public class Weather {
-
-    private int idWeather;
     private int id;
     private String main;
     private String description;
     private String weatherIcon;
     private long dateCreated;
 
-    public Weather(int idWeather, int id, String main, String description) {
-        this.idWeather = idWeather;
+    public Weather(int id, String main, String description) {
         this.id = id;
         this.main = main;
         this.description = description;
         this.weatherIcon = getIcon(id);
-    }
-
-    public int getIdWeather() {
-        return idWeather;
-    }
-
-    public void setIdWeather(int idWeather) {
-        this.idWeather = idWeather;
     }
 
     public int getId() {

@@ -27,6 +27,7 @@ public class LocationLiveData extends LiveData<Location> implements LocationList
     @SuppressLint("MissingPermission")
     public void refreshLocation() {
         locationManager.requestSingleUpdate(LocationManager.GPS_PROVIDER, this, null);
+        locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, this, null);
     }
 
     @Override

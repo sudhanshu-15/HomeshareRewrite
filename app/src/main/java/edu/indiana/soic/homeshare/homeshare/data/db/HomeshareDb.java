@@ -11,7 +11,7 @@ import edu.indiana.soic.homeshare.homeshare.data.model.Survey;
 import edu.indiana.soic.homeshare.homeshare.data.model.Weather;
 import edu.indiana.soic.homeshare.homeshare.data.model.WeatherInfo;
 
-@Database(entities = {Participant.class, Survey.class, Interview.class, WeatherInfo.class}, version = 1)
+@Database(entities = {Participant.class, Survey.class, Interview.class, WeatherInfo.class}, version = 2)
 public abstract class HomeshareDb extends RoomDatabase{
 
     abstract public HomeshareDao homeshareDao();

@@ -11,12 +11,11 @@
 
         <FrameLayout
             android:id="@+id/frameLayout"
-            android:layout_width="350dp"
+            android:layout_width="422dp"
             android:layout_height="200dp"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </FrameLayout>
+            app:layout_constraintTop_toTopOf="parent"></FrameLayout>
 
         <TextView
             android:id="@+id/title"
@@ -31,6 +30,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toStartOf="@+id/contactButton"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toEndOf="@+id/frameLayout"
             app:layout_constraintTop_toTopOf="parent" />
 

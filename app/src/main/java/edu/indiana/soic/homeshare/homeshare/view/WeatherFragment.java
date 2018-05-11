@@ -3,6 +3,7 @@ package edu.indiana.soic.homeshare.homeshare.view;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -40,12 +41,22 @@ public class WeatherFragment extends Fragment implements Injectable {
         weatherViewModel = ViewModelProviders.of(this, viewModelFactory).get(WeatherViewModel.class);
         weatherViewModel.weatherByLocation();
         weatherViewModel.getWeatherInfoLiveData().observe(this, weatherInfo -> {
-            try {
-                Log.d(TAG, "onActivityCreated: " + weatherInfo.getCondition());
-            }catch (NullPointerException e) {
-
+            if (weatherInfo != null) {
+                Log.d(TAG, "onActivityCreated: " + weatherInfo.getIcon());
+                weatherFragmentBinding.temp.setVisibility(View.VISIBLE);
+                weatherFragmentBinding.condition.setVisibility(View.VISIBLE);
+                weatherFragmentBinding.icon.setVisibility(View.VISIBLE);
+                weatherFragmentBinding.city.setVisibility(View.VISIBLE);
+                weatherFragmentBinding.setWeather(weatherInfo);
+                weatherFragmentBinding.icon.setText(weatherInfo.getIcon());
+                weatherFragmentBinding.noWeather.setVisibility(View.GONE);
+            } else {
+                weatherFragmentBinding.temp.setVisibility(View.GONE);
+                weatherFragmentBinding.condition.setVisibility(View.GONE);
+                weatherFragmentBinding.icon.setVisibility(View.GONE);
+                weatherFragmentBinding.city.setVisibility(View.GONE);
+                weatherFragmentBinding.noWeather.setVisibility(View.VISIBLE);
             }
-
         });
     }
 }

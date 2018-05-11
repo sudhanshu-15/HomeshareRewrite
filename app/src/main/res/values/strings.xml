@@ -17,4 +17,11 @@
     <string name="listemptyInterview">No interviews scheduled at the moment</string>
     <string name="invalidSurveyLink">Incorrect survey link, please contact researchers</string>
     <string name="interviewNotActive">Interview not yet active</string>
+    <string name="sun">&#xf00d;</string>
+    <string name="thunder">&#xf01e;</string>
+    <string name="drizzle">&#xf01c;</string>
+    <string name="rain">&#xf008;</string>
+    <string name="snow">&#xf01b;</string>
+    <string name="fog">&#xf014;</string>
+    <string name="cloud">&#xf013;</string>
 </resources>

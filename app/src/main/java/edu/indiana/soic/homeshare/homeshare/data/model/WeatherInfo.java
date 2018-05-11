@@ -9,13 +9,14 @@ public class WeatherInfo {
     private int id;
     private String condition;
     private String description;
-    private String icon;
+    private int icon;
+    private String city;
     private double temp;
     private double tempMin;
     private double tempMax;
     private long dateCreated;
 
-    public WeatherInfo(String condition, String description, String icon, double temp, double tempMin, double tempMax, long dateCreated) {
+    public WeatherInfo(String condition, String description, int icon, double temp, double tempMin, double tempMax, long dateCreated, String city) {
         this.condition = condition;
         this.description = description;
         this.icon = icon;
@@ -23,6 +24,15 @@ public class WeatherInfo {
         this.tempMin = tempMin;
         this.tempMax = tempMax;
         this.dateCreated = dateCreated;
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public int getId() {
@@ -49,11 +59,11 @@ public class WeatherInfo {
         this.description = description;
     }
 
-    public String getIcon() {
+    public int getIcon() {
         return icon;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(int icon) {
         this.icon = icon;
     }
 
