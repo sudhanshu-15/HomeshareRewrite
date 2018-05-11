@@ -14,6 +14,7 @@ import javax.inject.Singleton;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.InterviewListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.SurveyListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.UserActivityViewModel;
+import edu.indiana.soic.homeshare.homeshare.viewmodel.WeatherViewModel;
 
 @Singleton
 public class HomeshareViewModelFactory implements ViewModelProvider.Factory {
@@ -26,6 +27,7 @@ public class HomeshareViewModelFactory implements ViewModelProvider.Factory {
         creators.put(UserActivityViewModel.class, () -> viewModeSubComponent.userActivityViewModel());
         creators.put(SurveyListViewModel.class, () -> viewModeSubComponent.surveyListViewModel());
         creators.put(InterviewListViewModel.class, () -> viewModeSubComponent.interviewListViewModel());
+        creators.put(WeatherViewModel.class, () -> viewModeSubComponent.weatherViewModel());
     }
 
     @NonNull

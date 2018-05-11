@@ -6,4 +6,13 @@
     <color name="colorCard">#424242</color>
     <color name="white">#fafafa</color>
     <color name="cardButton">#ec407a</color>
+    <color name="consBack">#eceff1</color>
+    <color name="buttonContact">#66bb6a</color>
+    <color name="buttonSurvey">#7e57c2</color>
+    <color name="buttonInterview">#009688</color>
+    <color name="buttonData">#ab47bc</color>
+    <color name="buttonCalendar">#e53935</color>
+    <color name="buttonStudy">#3f51b5</color>
+    <color name="buttonTutorial">#8d6e63</color>
+    <color name="weatherback">#e1f5fe</color>
 </resources>

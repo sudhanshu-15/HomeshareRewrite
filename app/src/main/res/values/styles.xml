@@ -14,4 +14,59 @@
         <item name="colorAccent">@color/cardButton</item>
     </style>
 
+    <style name="FlatButtonHome" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorCard</item>
+    </style>
+
+    <style name="ButtonContact" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonContact</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonSurvey" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonSurvey</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonInterview" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonInterview</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonData" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonData</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonCalendar" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonCalendar</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonStudies" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonStudy</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ButtonTutorial" parent="Theme.AppCompat.Light">
+        <item name="android:buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="colorControlHighlight">@color/cardButton</item>
+        <item name="colorAccent">@color/buttonTutorial</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>
