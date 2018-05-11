@@ -11,7 +11,7 @@ import edu.indiana.soic.homeshare.homeshare.view.UserActivity;
 
 @Module
 public abstract class HomeActivityModule {
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = FragmentsBuildersModule.class)
     abstract HomeActivity contributeHomeActivityInjector();
 
     @ContributesAndroidInjector

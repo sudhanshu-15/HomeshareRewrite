@@ -3,6 +3,7 @@ package edu.indiana.soic.homeshare.homeshare.di;
 import android.app.Application;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
@@ -19,6 +20,7 @@ import edu.indiana.soic.homeshare.homeshare.api.WeatherService;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDao;
 import edu.indiana.soic.homeshare.homeshare.data.db.HomeshareDb;
 import edu.indiana.soic.homeshare.homeshare.data.db.ParticipantDao;
+import edu.indiana.soic.homeshare.homeshare.data.model.LocationLiveData;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -77,5 +79,11 @@ class AppModule {
     @Provides
     SharedPreferences provideSharedPreferences(Application application) {
         return PreferenceManager.getDefaultSharedPreferences(application);
+    }
+
+    @Singleton
+    @Provides
+    LocationLiveData provideLocationLiveData(Application context) {
+        return new LocationLiveData(context);
     }
 }

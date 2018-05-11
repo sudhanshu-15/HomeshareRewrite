@@ -1,6 +1,7 @@
 package edu.indiana.soic.homeshare.homeshare.repository;
 
 import android.arch.lifecycle.LiveData;
+import android.location.Location;
 import android.util.Log;
 
 import java.util.concurrent.Executor;
@@ -23,24 +24,30 @@ public class WeatherRepository {
     private final Executor executor;
     private final HomeshareDao homeshareDao;
     private final WeatherService weatherService;
-    private final LocationLiveData locationLiveData;
+    private final LocationLiveData location;
     public static final String TAG = "WeatherRepository";
 
     @Inject
-    public WeatherRepository(Executor executor, HomeshareDao homeshareDao, WeatherService weatherService, LocationLiveData locationLiveData) {
+    public WeatherRepository(Executor executor, HomeshareDao homeshareDao, WeatherService weatherService, LocationLiveData location) {
         this.executor = executor;
         this.homeshareDao = homeshareDao;
         this.weatherService = weatherService;
-        this.locationLiveData = locationLiveData;
-    }
-    
-    public LiveData<WeatherInfo> getWeather(String lat, String lon) {
-        fetchFromServer(lat, lon);
-        return homeshareDao.getWeather();
+        this.location = location;
     }
 
-    public LocationLiveData getLocationLiveData() {
-        return locationLiveData;
+    public LocationLiveData getLocation() {
+        return location;
+    }
+
+    public void refreshLocation() {
+        location.refreshLocation();
+    }
+
+    public LiveData<WeatherInfo> getWeather(Location location) {
+        String lat = String.valueOf(location.getLatitude());
+        String lon = String.valueOf(location.getLatitude());
+        fetchFromServer(lat, lon);
+        return homeshareDao.getWeather();
     }
 
     public void fetchFromServer(String lat, String lon) {
