@@ -7,7 +7,6 @@
             name="weather"
             type="edu.indiana.soic.homeshare.homeshare.data.model.WeatherInfo"/>
     </data>
-
     <android.support.constraint.ConstraintLayout
         android:id="@+id/weather_conts"
         android:layout_width="match_parent"
@@ -17,19 +16,20 @@
             android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="@{weather.city}"
-            android:textSize="30sp"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
+            android:textColor="@color/colorCard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.20" />
 
         <TextView
             android:id="@+id/temp"
@@ -39,12 +39,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:text="@{`Temp: ` + weather.temp + ` F`}"
-            android:textSize="30sp"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
+            android:textColor="@color/colorCard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/city"
             app:layout_constraintVertical_bias="0.0" />
@@ -53,19 +54,18 @@
             android:id="@+id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/weatherfont"
-            android:text=""
-            android:textSize="42sp"
+            android:textSize="90sp"
+            android:textStyle="bold"
             android:typeface="normal"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible"
+            android:textColor="@color/colorCard"
+            app:layout_constraintBaseline_toBaselineOf="@+id/condition"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/condition"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toEndOf="@+id/temp" />
 
         <TextView
             android:id="@+id/condition"
@@ -75,11 +75,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:text="@{weather.condition}"
-            android:textSize="30sp"
+            android:textSize="36sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
+            android:textColor="@color/colorCard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.30"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/temp"
             app:layout_constraintVertical_bias="0.0" />
@@ -87,17 +89,27 @@
         <ProgressBar
             android:id="@+id/no_weather"
             style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="113dp"
+            android:layout_height="87dp"
+            android:indeterminate="true"
             android:progress="@android:integer/config_longAnimTime"
             android:visibility="visible"
-            android:indeterminate="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="temp,icon,condition,city"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+    </android.support.constraint.ConstraintLayout>
 </layout>
