@@ -36,7 +36,7 @@
 
         <Button
             android:id="@+id/contactButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:layout_marginEnd="64dp"
@@ -63,7 +63,7 @@
 
         <Button
             android:id="@+id/surveyButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="64dp"
@@ -82,7 +82,7 @@
 
         <Button
             android:id="@+id/interviewButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -100,7 +100,7 @@
 
         <Button
             android:id="@+id/mydataButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
             android:layout_marginEnd="64dp"
             android:drawableTop="@drawable/ic_sync_white"
@@ -123,9 +123,8 @@
 
         <Button
             android:id="@+id/calendarButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginStart="64dp"
             android:layout_marginTop="8dp"
             android:drawableTop="@drawable/ic_calendar_white"
@@ -137,11 +136,12 @@
             android:theme="@style/ButtonCalendar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintVertical_bias="0.6" />
 
         <Button
             android:id="@+id/studiesButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -158,7 +158,7 @@
 
         <Button
             android:id="@+id/tutorialButton"
-            android:layout_width="250dp"
+            android:layout_width="275dp"
             android:layout_height="180dp"
             android:layout_marginEnd="64dp"
             android:drawableTop="@drawable/ic_tutorial_white"
