@@ -63,6 +63,7 @@ public class InterviewListFragment extends Fragment implements Injectable {
         viewModel.getInterviewList().observe(this, interviews -> {
             if (interviews.size() != 0) {
                 adapter.setInterviewList(interviews);
+                binding.emptylist.setVisibility(View.GONE);
             } else {
                 binding.emptylist.setVisibility(View.VISIBLE);
             }

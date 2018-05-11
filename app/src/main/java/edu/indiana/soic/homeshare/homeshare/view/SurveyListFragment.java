@@ -54,6 +54,7 @@ public class SurveyListFragment extends Fragment implements Injectable {
         viewModel.getSurveyList().observe(this, surveys -> {
             if (surveys.size() != 0) {
                 surveyListAdapter.setSurveyList(surveys);
+                binding.emptylist.setVisibility(View.GONE);
             } else {
                 binding.emptylist.setVisibility(View.VISIBLE);
             }
