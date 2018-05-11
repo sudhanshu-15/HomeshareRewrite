@@ -4,6 +4,7 @@ import dagger.Subcomponent;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.InterviewListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.SurveyListViewModel;
 import edu.indiana.soic.homeshare.homeshare.viewmodel.UserActivityViewModel;
+import edu.indiana.soic.homeshare.homeshare.viewmodel.WeatherViewModel;
 
 @Subcomponent
 public interface ViewModelSubComponent {
@@ -15,4 +16,5 @@ public interface ViewModelSubComponent {
     UserActivityViewModel userActivityViewModel();
     SurveyListViewModel surveyListViewModel();
     InterviewListViewModel interviewListViewModel();
+    WeatherViewModel weatherViewModel();
 }

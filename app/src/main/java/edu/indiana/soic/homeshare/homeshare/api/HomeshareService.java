@@ -23,5 +23,4 @@ public interface HomeshareService {
 
     @GET("participant/askhelp")
     Call<ResponseBody> contactResearcher(@Query("pId") String pId);
-
 }
