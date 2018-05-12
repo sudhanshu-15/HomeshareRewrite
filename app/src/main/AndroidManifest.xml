@@ -37,9 +37,19 @@
         </service>
 
         <activity android:name=".view.SurveyActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeChild">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.HomeActivity"/>
+        </activity>
         <activity android:name=".view.InterviewActivity"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:theme="@style/AppThemeChild">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.HomeActivity"/>
+        </activity>
     </application>
 
 </manifest>

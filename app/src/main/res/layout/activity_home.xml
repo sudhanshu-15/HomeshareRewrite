@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/consBack"
+        android:paddingTop="30dp"
         tools:context=".view.HomeActivity">
 
         <FrameLayout
@@ -21,7 +22,7 @@
             android:layout_height="200dp"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/title"
@@ -49,13 +50,13 @@
             android:layout_marginTop="24dp"
             android:bottomRightRadius="10dp"
             android:drawableTop="@drawable/ic_contact_white"
+            android:onClick="contactResearchers"
             android:padding="8dp"
             android:text="Contact Researchers"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:onClick="contactResearchers"
             android:theme="@style/ButtonContact"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,40 +183,37 @@
             android:id="@+id/surveyNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_corner"
-            android:elevation="2dp"
+            android:elevation="8dp"
             android:text="@{String.valueOf(count.surveyCount)}"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/surveyButton"
             app:layout_constraintEnd_toEndOf="@+id/surveyButton"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="@+id/surveyButton"
-            app:layout_constraintTop_toTopOf="@+id/surveyButton" />
+            app:layout_constraintStart_toEndOf="@+id/surveyButton"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.0" />
+
         <TextView
             android:id="@+id/interviewNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/rounded_corner"
-            android:elevation="2dp"
+            android:elevation="8dp"
             android:text="@{String.valueOf(count.interviewCount)}"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold"
             android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/interviewButton"
             app:layout_constraintEnd_toEndOf="@+id/interviewButton"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toStartOf="@+id/interviewButton"
-            app:layout_constraintTop_toTopOf="@+id/interviewButton" />
+            app:layout_constraintStart_toEndOf="@+id/interviewButton"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            app:layout_constraintVertical_bias="0.0" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_notified"

@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -60,9 +62,14 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
                 }
             }
         });
-        binding.contraintCard.findViewById(R.id.okButton)
-                .setOnClickListener(view -> binding.cardNotified.setVisibility(View.GONE));
+        binding.okButton.setOnClickListener(view -> {
+            binding.cardNotified.setVisibility(View.GONE);
+        });
+//        binding.contraintCard.findViewById(R.id.okButton)
+//                .setOnClickListener(view -> binding.cardNotified.setVisibility(View.GONE));
     }
+
+
 
     public void showSurvey(View view) {
         Intent surveyActivity = new Intent(getApplicationContext(), SurveyActivity.class);

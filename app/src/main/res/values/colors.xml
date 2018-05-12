@@ -15,5 +15,5 @@
     <color name="buttonStudy">#3f51b5</color>
     <color name="buttonTutorial">#8d6e63</color>
     <color name="weatherback">#e1f5fe</color>
-    <color name="notificationColor">#d50000</color>
+    <color name="notificationColor">#e53935</color>
 </resources>
