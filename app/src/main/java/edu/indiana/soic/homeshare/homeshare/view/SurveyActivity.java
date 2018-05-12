@@ -1,8 +1,10 @@
 package edu.indiana.soic.homeshare.homeshare.view;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 
 import javax.inject.Inject;
 
@@ -15,10 +17,17 @@ public class SurveyActivity extends AppCompatActivity implements HasSupportFragm
     @Inject
     DispatchingAndroidInjector<Fragment> dispatchingAndroidInjector;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back);
         if (savedInstanceState == null) {
             SurveyListFragment fragment = new SurveyListFragment();
             getSupportFragmentManager().beginTransaction()
