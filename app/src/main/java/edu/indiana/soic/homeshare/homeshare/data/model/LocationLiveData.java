@@ -38,7 +38,6 @@ public class LocationLiveData extends LiveData<Location> implements LocationList
 
     @Override
     public void onLocationChanged(Location location) {
-        Log.d(TAG, "onLocationChanged: " + location.toString());
         setValue(location);
     }
 

@@ -42,20 +42,11 @@ public class WeatherFragment extends Fragment implements Injectable {
         weatherViewModel.weatherByLocation();
         weatherViewModel.getWeatherInfoLiveData().observe(this, weatherInfo -> {
             if (weatherInfo != null) {
-                Log.d(TAG, "onActivityCreated: " + weatherInfo.getIcon());
-//                weatherFragmentBinding.temp.setVisibility(View.VISIBLE);
-//                weatherFragmentBinding.condition.setVisibility(View.VISIBLE);
-//                weatherFragmentBinding.icon.setVisibility(View.VISIBLE);
-//                weatherFragmentBinding.city.setVisibility(View.VISIBLE);
                 weatherFragmentBinding.group.setVisibility(View.VISIBLE);
                 weatherFragmentBinding.setWeather(weatherInfo);
                 weatherFragmentBinding.icon.setText(weatherInfo.getIcon());
                 weatherFragmentBinding.noWeather.setVisibility(View.GONE);
             } else {
-//                weatherFragmentBinding.temp.setVisibility(View.GONE);
-//                weatherFragmentBinding.condition.setVisibility(View.GONE);
-//                weatherFragmentBinding.icon.setVisibility(View.GONE);
-//                weatherFragmentBinding.city.setVisibility(View.GONE);
                 weatherFragmentBinding.group.setVisibility(View.GONE);
                 weatherFragmentBinding.noWeather.setVisibility(View.VISIBLE);
             }
