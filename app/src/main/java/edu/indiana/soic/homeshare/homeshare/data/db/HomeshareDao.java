@@ -9,6 +9,7 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import edu.indiana.soic.homeshare.homeshare.data.model.Count;
 import edu.indiana.soic.homeshare.homeshare.data.model.Interview;
 import edu.indiana.soic.homeshare.homeshare.data.model.Main;
 import edu.indiana.soic.homeshare.homeshare.data.model.Survey;
@@ -59,6 +60,9 @@ public interface HomeshareDao {
 
     @Query("SELECT COUNT(*) FROM interviews")
     int getInterviewCount();
+
+    @Query("SELECT(SELECT COUNT(*) FROM surveys) AS surveyCount, (SELECT COUNT(*) FROM interviews) AS interviewCount")
+    LiveData<Count> getCount();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void addWeather(WeatherInfo weather);
