@@ -216,5 +216,57 @@
             app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="@+id/interviewButton"
             app:layout_constraintTop_toTopOf="@+id/interviewButton" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_notified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/contraint_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorCard">
+
+                <Button
+                    android:id="@+id/okButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Ok"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:theme="@style/FlatButton"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/interviewNotActive" />
+
+                <TextView
+                    android:id="@+id/interviewNotActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:padding="16dp"
+                    android:text="@string/researcherNotified"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
 </layout>

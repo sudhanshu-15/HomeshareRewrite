@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import javax.inject.Inject;
 
@@ -59,6 +60,8 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
                 }
             }
         });
+        binding.contraintCard.findViewById(R.id.okButton)
+                .setOnClickListener(view -> binding.cardNotified.setVisibility(View.GONE));
     }
 
     public void showSurvey(View view) {
@@ -87,6 +90,7 @@ public class HomeActivity extends AppCompatActivity implements HasSupportFragmen
 
     public void contactResearchers(View view) {
         homeActivityViewModel.notifyResearcher();
+        binding.cardNotified.setVisibility(View.VISIBLE);
     }
 
     @Override

@@ -24,4 +24,5 @@
     <string name="snow">&#xf01b;</string>
     <string name="fog">&#xf014;</string>
     <string name="cloud">&#xf013;</string>
+    <string name="researcherNotified">Researchers have been notified</string>
 </resources>
