@@ -46,7 +46,7 @@ public class WeatherRepository {
 
     public LiveData<WeatherInfo> getWeather(Location location) {
         String lat = String.valueOf(location.getLatitude());
-        String lon = String.valueOf(location.getLatitude());
+        String lon = String.valueOf(location.getLongitude());
         fetchFromServer(lat, lon);
         return homeshareDao.getWeather();
     }
